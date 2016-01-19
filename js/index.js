@@ -44,5 +44,5 @@ document.images['display1'].src = images1[randomNumber].src;
 document.images['display2'].src = images1[randomNumber1].src;
 document.images['display3'].src = images1[randomNumber2].src;
 }
-var changePic1 = document.getElementById('changePic');
-changePic1.addEventListener('submit', myRandom);
+var changePics = document.getElementById('changePic');
+changePics.addEventListener('submit', myRandom);
