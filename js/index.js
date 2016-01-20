@@ -81,13 +81,16 @@ document.images['display3'].src = allImages1[randomNumber2].src;
 //
 var clickedPics = [];
 var allClicks = 0;
-
+var clickedArray = [];
 //one.addEventListener('click', function() {
   //clickOnOne(allImages1[randomNumber]);
 //});
 one.addEventListener('click', clickOnOne);
 
 function clickOnOne() {
+
+    clickedArray.push(document.getElementById('display1').clicked);
+
 //  allImages1[event.target.className].clicked += 1;
   allImages1[document.getElementById('display1').className].clicked += 1;
   console.log(document.getElementById('display1').className);
@@ -136,6 +139,14 @@ function clickOnTwo() {
 three.addEventListener('click', clickOnThree);
 
 function clickOnThree() {
+  if((document.images['display1'].src === document.images['display2'].src) || (document.images['display1'].src === document.images['display3'].src ) || (document.images['display2'].src === document.images['display3'].src)) {
+    document.images['display1'].src = allImages1[randomNumber].src;
+    document.images['display1'].className = randomNumber;
+    document.images['display2'].src = allImages1[randomNumber1].src;
+    document.images['display2'].className = randomNumber1;
+    document.images['display3'].src = allImages1[randomNumber2].src;
+    document.images['display3'].className = randomNumber2;
+  }
   if((allClicks % 15 != 0) || (allClicks == 0)){
   allImages1[document.getElementById('display3').className].clicked += 1;
   console.log(document.getElementById('display3').className);
