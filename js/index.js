@@ -61,21 +61,20 @@ var randomNumber2 = Math.floor(Math.random()*n);
 //   images1[13].src = 'images/wine-glass.jpg';
 // }
 // preLoadImages();
-/*
+
 function myRandom() {
 event.preventDefault();
-var n = allImages1.length - 1;
-var randomNumber = Math.floor(Math.random()*(n+1));
-var randomNumber1 = Math.floor(Math.random()*(n+1));
-var randomNumber2 = Math.floor(Math.random()*(n+1));
+var n = allImages1.length;
+var randomNumber = Math.floor(Math.random()*n);
+var randomNumber1 = Math.floor(Math.random()*n);
+var randomNumber2 = Math.floor(Math.random()*n);
 document.images['display1'].src = allImages1[randomNumber].src;
 document.images['display2'].src = allImages1[randomNumber1].src;
 document.images['display3'].src = allImages1[randomNumber2].src;
 }
 
-var changePics = document.getElementById('changePic');
-changePics.addEventListener('submit', myRandom);
-// */
+
+//
 // var one = document.getElementById('one');
 //
 // //one.addEventListener('click', clickOnOne);
@@ -115,6 +114,7 @@ function clickOnOne() {
 two.addEventListener('click', clickOnTwo);
 
 function clickOnTwo() {
+  if((allClicks % 15 != 0) || (allClicks == 0)){
   allImages1[document.getElementById('display2').className].clicked += 1;
   console.log(document.getElementById('display2').className);
   var n = allImages1.length;
@@ -131,11 +131,12 @@ function clickOnTwo() {
   document.images['display2'].className = randomNumber1;
   document.images['display3'].src = allImages1[randomNumber2].src;
   document.images['display3'].className = randomNumber2;
-}
+}}
 
 three.addEventListener('click', clickOnThree);
 
 function clickOnThree() {
+  if((allClicks % 15 != 0) || (allClicks == 0)){
   allImages1[document.getElementById('display3').className].clicked += 1;
   console.log(document.getElementById('display3').className);
   var n = allImages1.length - 1;
@@ -152,3 +153,10 @@ function clickOnThree() {
   document.images['display3'].src = allImages1[randomNumber2].src;
   document.images['display3'].className = randomNumber2;
 }
+  else {
+    var btn = document.createElement('BUTTON');
+    var btntxt = document.createTextNode('Keep Going');
+    btn.appendChild(btntxt);
+    document.getElementById('footer').appendChild(btn);
+    btn.addEventListener('click', myRandom);
+}}
