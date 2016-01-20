@@ -1,6 +1,6 @@
 .headcontent {
   height: 75px;
-  width:86%;
+  width:800px;
   margin-left: 50px;
   margin-right: 50px;
   background-color: teal;
@@ -20,12 +20,12 @@
   border-radius: 5px;
 }
 #left {
-  margin-left: 79px;
+  margin-left: 60px;
   margin-right: 0px;
 }
 #middle {
-  margin-left: 10px;
-  margin-right: 10px;
+  margin-left: 3px;
+  margin-right: 3px;
 }
 #right {
   margin-left: 0px;
@@ -37,7 +37,7 @@
 }
 #footer {
   height: 75px;
-  width:86%;
+  width:800px;
   margin-top: 40px;
   margin-left: 50px;
   margin-right: 50px;
