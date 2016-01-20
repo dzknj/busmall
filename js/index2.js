@@ -2,6 +2,7 @@ var productId = ['bag', 'banana', 'boots', 'chair', 'cthulhu', 'dragon', 'pen', 
 var productSrc = ['images/bag.jpg', 'images/banana.jpg', 'images/boots.jpg', 'images/chair.jpg', 'images/cthulhu.jpg', 'images/dragon.jpg', 'images/pen.jpg', 'images/scissors.jpg', 'images/shark.jpg', 'images/sweep.png', 'images/unicorn.jpg', 'images/usb.gif', 'images/water-can.jpg', 'images/wine-glass.jpg'];
 var allProducts = [];
 var totalClicks = 0;
+var totalShown = 3;
 function Product(name, path) {
   this.name = name;
   this.path = path;
@@ -85,7 +86,49 @@ function clickDisplay3() {
 
 function logAllClicks() {
   totalClicks += 1;
+  totalShown += 3;
+  makeButton();
 }
 display1.addEventListener('click', handleClickDisplay1);
 display2.addEventListener('click', handleClickDisplay2);
 display3.addEventListener('click', handleClickDisplay3);
+
+function makeButton() {
+if(totalClicks != 0 && totalClicks % 15 == 0) {
+  document.getElementById('footbutton1').style.display = 'block';
+  document.getElementById('footbutton2').style.display = 'block';
+  document.getElementById('resultsanddata').style.display = 'block';
+  btn.addEventListener('click', hideButtons);
+  btn1.addEventListener('click', displayData);
+}};
+
+var btn = document.createElement('BUTTON');
+var btntxt = document.createTextNode('Keep Going');
+btn.appendChild(btntxt);
+document.getElementById('footbutton1').appendChild(btn);
+var btn1 = document.createElement('BUTTON');
+var btntxt1 = document.createTextNode('Display Data');
+btn1.appendChild(btntxt1);
+document.getElementById('footbutton2').appendChild(btn1);
+document.getElementById('footbutton1').style.display = 'none';
+document.getElementById('footbutton2').style.display = 'none';
+document.getElementById('resultsanddata').style.display = 'none';
+
+function hideButtons() {
+  document.getElementById('footbutton1').style.display = 'none';
+  document.getElementById('footbutton2').style.display = 'none';
+  document.getElementById('resultsanddata').style.display = 'none';
+};
+
+function displayData() {
+   var ul = document.createElement('ul');
+  for(var i = 0; i < allProducts.length; i++) {
+    var li = document.createElement('li');
+    li.textContent = 'You clicked the ' + allProducts[i].name + ' ' + allProducts[i].clicks + ' times, or ' + ((100/totalClicks)*allProducts[i].clicks).toFixed(2) + '% of the time. It was shown ' + allProducts[i].shown + ' times.';
+    ul.appendChild(li);
+    // var li = document.createElement('li');
+    // li.textContet =
+    // ul.appendChild(li);
+  }
+  document.getElementById('dataset').appendChild(ul);
+}

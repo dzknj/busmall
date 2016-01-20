@@ -1,3 +1,6 @@
+body {
+  background-color: gray;
+}
 .headcontent {
   height: 75px;
   width:800px;
@@ -46,4 +49,27 @@
   border-width: 5px;
   border-bottom-left-radius: 15px;
   border-bottom-right-radius: 15px;
+}
+p {
+  float: right;
+  margin-top: -30px;
+  margin-right: 50px;
+  font-weight: bold;
+  font-size: 1.2em;
+}
+li {
+  font-weight: bold;
+}
+#instructions {
+  font-size: 1em;
+  float: right;
+  margin-top: 10px;
+}
+#footbutton1 {
+  margin-left:20px;
+  margin-top:10px;
+}
+#footbutton2 {
+  margin-left: 20px;
+  margin-top: 15px;
 }
