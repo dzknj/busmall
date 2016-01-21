@@ -1,5 +1,6 @@
 <html>
   <head>
+    <script src="js/chart.js"></script>
     <link rel="stylesheet" type="text/css" href="css/index.css">
     <title>
       BUSMALL "Hop on Board the Bus and Fly Away with Us to Busmall!!!"
@@ -44,13 +45,16 @@
         <div class="content1" id="footbutton2">
         </div>
         <div class="content1" id="resultsanddata">
-          <p>Click "Keep Going" if you would like to continue with the market research. <br>
+          <p>Click "Keep Going" if you would like to click more images to add to results. <br>
             Click "Display Data" to see the results of your product choices.
           </p>
       </div>
     </div>
   </div>
-  <div id="dataset"></div>
+  <div id="dataset">
+    <h3 id="none">Number of Clicks for Each Product Image</h3>
+    <canvas id="productChart" width="500" height="400"></canvas>
+  </div>
 
     <script src="js/index2.js"></script>
   </body>
