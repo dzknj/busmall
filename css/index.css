@@ -1,6 +1,9 @@
+body {
+  background-color: aqua;
+}
 .headcontent {
   height: 75px;
-  width:86%;
+  width:800px;
   margin-left: 50px;
   margin-right: 50px;
   background-color: teal;
@@ -20,12 +23,12 @@
   border-radius: 5px;
 }
 #left {
-  margin-left: 79px;
+  margin-left: 60px;
   margin-right: 0px;
 }
 #middle {
-  margin-left: 10px;
-  margin-right: 10px;
+  margin-left: 3px;
+  margin-right: 3px;
 }
 #right {
   margin-left: 0px;
@@ -37,7 +40,7 @@
 }
 #footer {
   height: 75px;
-  width:86%;
+  width:800px;
   margin-top: 40px;
   margin-left: 50px;
   margin-right: 50px;
@@ -46,4 +49,27 @@
   border-width: 5px;
   border-bottom-left-radius: 15px;
   border-bottom-right-radius: 15px;
+}
+p {
+  float: right;
+  margin-top: -50px;
+  margin-right: 50px;
+  font-weight: bold;
+  font-size: 1.2em;
+}
+li {
+  font-weight: bold;
+}
+#instructions {
+  font-size: 1em;
+  float: right;
+  margin-top: 10px;
+}
+#footbutton1 {
+  margin-left:20px;
+  margin-top:10px;
+}
+#footbutton2 {
+  margin-left: 20px;
+  margin-top: 15px;
 }

@@ -1,0 +1,61 @@
+<html>
+  <head>
+    <script src="js/chart.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+    <title>
+      BUSMALL "Hop on Board the Bus and Fly Away with Us to Busmall!!!"
+    </title>
+  </head>
+  <body>
+
+  <div class="container">
+    <div class="1columngrid">
+      <div class="col-1-1" id="header">
+        <div class="headcontent">
+          <h1>BUSMALL</h1>
+        </div>
+        <div id="headcontent2">
+          <p id="instructions">Out of the 3 images shown, click on the one that you like the best and are most likely to buy.<br>
+          After you make 15 choices, 2 buttons will appear below, giving you the choice of seeing your results or to continue choosing. </br>
+          You <span>"MUST"</span> click one of these buttons.
+        </p></div>
+      </div>
+    </div>
+    <div class="3columngrid">
+      <div class="col-1-3" id="left">
+        <div class="content" id="one">
+          <img id="display1" width="250px" height="250px" class="0">
+          </div>
+        </div>
+      <div class="col-1-3" id="middle">
+        <div class="content" id="two">
+          <img id="display2" width="250px" height="250px" class="1">
+        </div>
+      </div>
+      <div class="col-1-3" id="right">
+        <div class="content" id="three">
+          <img id="display3" src="" width="250px" height="250px" class="2">
+          </div>
+        </div>
+      </div>
+    <div class="1columngrid" id="footer">
+      <div class="col-1-1">
+        <div class="content1" id="footbutton1">
+        </div>
+        <div class="content1" id="footbutton2">
+        </div>
+        <div class="content1" id="resultsanddata">
+          <p>Click "Keep Going" if you would like to click more images to add to results. <br>
+            Click "Display Data" to see the results of your product choices.
+          </p>
+      </div>
+    </div>
+  </div>
+  <div id="dataset">
+    <h3 id="none">Number of Clicks for Each Product Image</h3>
+    <canvas id="productChart" width="500" height="400"></canvas>
+  </div>
+
+    <script src="js/index2.js"></script>
+  </body>
+</html>
