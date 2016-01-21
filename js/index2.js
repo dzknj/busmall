@@ -244,9 +244,11 @@ document.getElementById('none').style.display = 'none';
                    labels : [],
                    datasets : [
                        {
-                         fillColor : 'white',
-                         strokeColor : 'black',
-                         labelColor : 'orange',
+                         fillColor : 'black',
+                         strokeColor : 'white',
+                         labelColor : 'black',
+                         scaleLineColor: "white",
+                         scaleFontColor: 'white',
                          data : []
                        }
                  ]
@@ -260,5 +262,12 @@ document.getElementById('none').style.display = 'none';
 
              // get bar chart canvas
              var ctx = document.getElementById("productChart").getContext("2d");
-             var newChart = new Chart(ctx).Bar(barData);
+             var newChart = new Chart(ctx).Bar(barData, { scaleFontColor: 'black', scaleLineColor: 'black', animationSteps : 175,
+  tooltipYPadding : 16,
+  tooltipCornerRadius : 0,
+  tooltipTitleFontStyle : 'normal',
+  tooltipFillColor : 'rgba(0,160,0,0.8)',
+  animationEasing : 'easeInOutBack',
+  scaleLineColor : 'black',
+  scaleFontSize : 16});
 };
