@@ -22,18 +22,24 @@ function handleClickDisplay1() {
   console.log('display1 was clicked');
   clickDisplay1();
   logAllClicks();
+  localStorage.setItem('makeChartData', JSON.stringify(allProducts));
+
 };
 
 function handleClickDisplay2() {
   console.log('display2 was clicked');
   clickDisplay2();
   logAllClicks();
+  localStorage.setItem('makeChartData', JSON.stringify(allProducts));
+
 };
 
 function handleClickDisplay3() {
   console.log('display3 was clicked');
   clickDisplay3();
   logAllClicks();
+  localStorage.setItem('makeChartData', JSON.stringify(allProducts));
+
 };
 
 var n = allProducts.length;
@@ -100,6 +106,7 @@ if(totalClicks != 0 && totalClicks % 3 == 0) {
   document.getElementById('resultsanddata').style.display = 'block';
   btn.addEventListener('click', hideButtons);
   btn1.addEventListener('click', makeChart);
+
 }};
 
 var btn = document.createElement('BUTTON');
@@ -126,117 +133,11 @@ function displayData() {
     var li = document.createElement('li');
     li.textContent = 'You clicked the ' + allProducts[i].name + ' ' + allProducts[i].clicks + ' times, or ' + ((100/totalClicks)*allProducts[i].clicks).toFixed(2) + '% of the time. It was shown ' + allProducts[i].shown + ' times.';
     ul.appendChild(li);
-    // var li = document.createElement('li');
-    // li.textContet =
-    // ul.appendChild(li);
+
   }
   document.getElementById('dataset').appendChild(ul);
 }
 
-// var taValues = [8 ,6, 2, 4];
-//
-// var kevin = [
-//   {
-//     value: taValues[0],
-//     label: 'Hambella',
-//     color: '#811BD6',
-//     highlight: '#811B33'
-//   },
-//   {
-//     value: taValues[1],
-//     label: 'Kris',
-//     color: '#9CBABA',
-//     highlight: '#9CBA99'
-//   },
-//   {
-//     value: taValues[2],
-//     label: 'Benton',
-//     color: '#D18177',
-//     highlight: '#D18133'
-//   },
-//   {
-//     value : taValues[3],
-//     label: 'Dan',
-//     color: '#6AE128',
-//     highlight: '#6AE199'
-//   }
-// ];
-//
-// var context = document.getElementById('myChart').getContext('2d');
-//
-// var myNewChart = new Chart(context).PolarArea(kevin, {
-//     //Number - Amount of animation steps
-//     animationSteps : 225,
-//     //String - Animation easing effect
-//     animationEasing : "easeOutBounce",
-//     //Boolean - Whether we animate the rotation of the Doughnut
-//     animateRotate : true,
-//     //Boolean - Whether we animate scaling the Doughnut from the centre
-//     animateScale : true,
-//     scaleShowLabelBackdrop : true
-// });
-//
-// popularityChart.scale.yLabels = ['a-hole', 'bozo', 'chump', 'meh', 'tolerable', 'good', 'awesome', 'amazesauce'];
-// document.getElementById('resultsanddata').appendChild(myNewChart);
-// var ctx = document.getElementById('myChart').getContext('2d');
-// var myNewChart = new Chart(ctx).Bar(data);
-// var data = [
-//   {
-//     value: allProducts[0].clicked,
-//     label: allProducts[0].name,
-//     color: '#811BD6',
-//     highlight: '#811B33'
-//   },
-//   {
-//     value: allProducts[1].clicked,
-//     label: allProducts[1].name,
-//     color: '#9CBABA',
-//     highlight: '#9CBA99'
-//   }
-// ];
-// myNewChart.scale.yLabels = ['1','2','3','4','5','6','7','8','9','10','11','12','13','14','15'];
-// var ctx = document.getElementById("myChart").getContext("2d");
-// var myBarChart = new Chart(ctx).Bar(data, options);
-// var data = {
-//     labels: ["January", "February", "March", "April", "May", "June", "July"],
-//     datasets: [
-//         {
-//             label: "My First dataset",
-//             fillColor: "rgba(220,220,220,0.5)",
-//             strokeColor: "rgba(220,220,220,0.8)",
-//             highlightFill: "rgba(220,220,220,0.75)",
-//             highlightStroke: "rgba(220,220,220,1)",
-//             data: [65, 59, 80, 81, 56, 55, 40]
-//         },
-//         {
-//             label: "My Second dataset",
-//             fillColor: "rgba(151,187,205,0.5)",
-//             strokeColor: "rgba(151,187,205,0.8)",
-//             highlightFill: "rgba(151,187,205,0.75)",
-//             highlightStroke: "rgba(151,187,205,1)",
-//             data: [28, 48, 40, 19, 86, 27, 90]
-//         }
-//     ]
-// };
-//  document.getElementById('resultsanddata').appendChild(myNewChart);
-// var barData = {
-//   labels: ['Italy', 'UK', 'USA', 'Germany', 'France', 'Japan'],
-//   datasets: [
-//       {
-//         label: '2010 customers #',
-//         fillColor: '#382765',
-//         data: [2500, 1902, 1401, 610, 1245, 952]
-//       },
-//       {
-//         label: '2014 customers #',
-//         fillColor: '#7BC225',
-//         data: [3104, 1689, 1318, 589, 1199, 1436]
-//       }
-//   ]
-// };
-// var context = document.getElementById('clients').getContext('2d');
-// var clientsChart = new Chart(context).Bar(barData);
-// document.getElementById('clients').appendChild(clientsChart);
 document.getElementById('none').style.display = 'none';
     function makeChart(){
       document.getElementById('none').style.display = 'block';
@@ -262,3 +163,20 @@ document.getElementById('none').style.display = 'none';
              var ctx = document.getElementById("productChart").getContext("2d");
              var newChart = new Chart(ctx).Bar(barData);
 };
+
+var clearLs = document.getElementById('lsClear');
+
+var handleLsClear = function() {
+  console.log('Clearing storage');
+  localStorage.clear();
+}
+
+clearLs.addEventListener('click', handleLsClear);
+
+var chartData = localStorage.getItem('makeChartData');
+  if (chartData) {
+    allProducts = JSON.parse(chartData);
+  } else {
+    console.log('Local storage empty!! Initializing!');
+    localStorage.setItem('makeChartData', JSON.stringify(allProducts));
+  }

@@ -4,6 +4,8 @@ Project start date is january 18, 2016.
 Author of Project is David Zalk
 Class is Code Fellows - 201
 
+Thursday January 21st: This is Sam Gruse, I was driver on this project in which I enabled local storage.  This project can now be loaded and refreshed without losing any information.
+
 User Stories:
 
 - As a market team, I want 3 random pictures of products to be displayed simultaneously together in the browser to enable particiapants to choose one of the three products that they are most likely to purchase.
